@@ -32,7 +32,7 @@ function addAndCreateCommit() {
 }
 
 async function pushCommit() {
-  runConsoleCommand("git push -u origin main");
+  runConsoleCommand("git push");
 }
 
 function run() {
