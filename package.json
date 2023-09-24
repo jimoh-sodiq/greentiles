@@ -1,0 +1,13 @@
+{
+  "name": "greentiles",
+  "version": "1.0.0",
+  "module": "index.ts",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
