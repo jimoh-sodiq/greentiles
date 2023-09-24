@@ -4,7 +4,7 @@ import { exec } from "child_process";
 const commitMessage =  process.argv[2] ?? "Committing Today";
 const commitCount = Number(process.argv[3]) ?? 5;
 
-function runConsoleCommand(command: string) {
+async function runConsoleCommand(command: string) {
   try {
     console.log(`running command: ${command}`);
     const output = exec(command, { encoding: "utf-8" });
@@ -32,7 +32,7 @@ function addAndCreateCommit() {
 }
 
 async function pushCommit() {
-  runConsoleCommand("git push");
+  await runConsoleCommand("git push");
 }
 
 function run() {
