@@ -38,10 +38,10 @@ async function pushCommit() {
 function run() {
   checkIfGitExists();
   createGreenTilesFileOrAppendText();
-  console.log("green tiled");
-  console.log("-----------------------------------");
   addAndCreateCommit();
   pushCommit();
+  console.log("green tiled");
+  console.log("-----------------------------------");
 }
 
 for (let i = 1; i <= commitCount; i++) {
