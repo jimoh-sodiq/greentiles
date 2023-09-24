@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import { exec, execSync } from "child_process";
+import { execSync } from "child_process";
 
 const commitMessage = process.argv[2] ?? "Committing Today";
 const commitCount = Number(process.argv[3]) ?? 5;
@@ -10,7 +10,7 @@ async function runConsoleCommand(command: string) {
     const output = execSync(command, { encoding: "utf-8" });
   } catch (error: any) {
     console.error(`Error: ${error.stderr}`);
-    process.exit(error.code);
+    process.exit(error.code ?? 1);
   }
 }
 
@@ -29,7 +29,6 @@ function createGreenTilesFileOrAppendText() {
 }
 
 function addAndCreateCommit() {
-  // runConsoleCommand("git add .");
   runConsoleCommand(`git commit -am "${commitMessage}"`);
   console.log("commit created");
 }
